@@ -1,5 +1,6 @@
 package com.uca.capas.domain;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -26,7 +27,7 @@ public class Movie {
     private String Name;
 	
 	@Column(name="length")
-    private Integer length;
+    private BigInteger length;
 
 	@Column(name="status")
     private boolean Status;
@@ -39,6 +40,19 @@ public class Movie {
 	
 	@OneToMany(mappedBy="Movie",fetch= FetchType.LAZY,orphanRemoval=true,cascade=CascadeType.PERSIST)
 	private List<Showcase> Showcase;
+	
+	//Delegate methods
+
+		public String getStateM() {
+			if(this.Status) {
+			return "Activo";
+		               }
+			else {
+				return "Inactivo";
+				}
+			}
+		
+		//Setters and Getters
 
 	public Integer getIdMovie() {
 		return IdMovie;
@@ -56,11 +70,11 @@ public class Movie {
 		Name = name;
 	}
 
-	public Integer getLength() {
+	public BigInteger getLength() {
 		return length;
 	}
 
-	public void setLength(Integer length) {
+	public void setLength(BigInteger length) {
 		this.length = length;
 	}
 

@@ -70,10 +70,10 @@ public class User {
 
 	public String getStateU() {
 		if(this.state) {
-		return "Active";
+		return "Activo";
 	               }
 		else {
-			return "Inactive";
+			return "Inactivo";
 			}
 		}
 	

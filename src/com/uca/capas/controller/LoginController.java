@@ -34,7 +34,7 @@ public class LoginController {
 	@RequestMapping(value= "/Login" ,method= RequestMethod.POST)
 	public ModelAndView Login(@Valid @ModelAttribute("loginDTO") loginDTO loginDTO ,BindingResult result) {
 		ModelAndView mav = new ModelAndView();
-       if(result.hasErrors() || Service.findUserandPass(loginDTO.getUser(), loginDTO.getClave())==null) {
+       if(result.hasErrors() || Service.findUserandPass(loginDTO.getUser(), loginDTO.getClave())==null || Service.findUserandPass(loginDTO.getUser(), loginDTO.getClave()).getStateU().equals("Inactivo")) {
     	   mav.setViewName("Login");
        }	
        else {

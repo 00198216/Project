@@ -1,5 +1,7 @@
 package com.uca.capas.domain;
 
+import java.math.BigInteger;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,10 +28,44 @@ public class ShowXCinema {
 	private Showcase Show;
 	
 	@Column(name="availableSeats")
-    private Integer ASeats;
+    private BigInteger ASeats;
 	
 	@ManyToOne(fetch= FetchType.LAZY)
 	@JoinColumn(name="id_cinema")
 	private Showcase Cinema;
+
+	public Integer getIdSXC() {
+		return IdSXC;
+	}
+
+	public void setIdSXC(Integer idSXC) {
+		IdSXC = idSXC;
+	}
+
+	public Showcase getShow() {
+		return Show;
+	}
+
+	public void setShow(Showcase show) {
+		Show = show;
+	}
+
+	public BigInteger getASeats() {
+		return ASeats;
+	}
+
+	public void setASeats(BigInteger aSeats) {
+		ASeats = aSeats;
+	}
+
+	public Showcase getCinema() {
+		return Cinema;
+	}
+
+	public void setCinema(Showcase cinema) {
+		Cinema = cinema;
+	}
+	
+	
 
 }

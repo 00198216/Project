@@ -1,5 +1,7 @@
 package com.uca.capas.domain;
 
+import java.math.BigInteger;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,7 +27,7 @@ public class Seat {
     private String seatType;
 	
 	@Column(name="seatNum")
-    private Integer seatNum;
+    private BigInteger seatNum;
 	
 	@ManyToOne(fetch= FetchType.LAZY)
 	@JoinColumn(name="id_cinema")
@@ -49,11 +51,11 @@ public class Seat {
 		this.seatType = seatType;
 	}
 
-	public Integer getSeatNum() {
+	public BigInteger getSeatNum() {
 		return seatNum;
 	}
 
-	public void setSeatNum(Integer seatNum) {
+	public void setSeatNum(BigInteger seatNum) {
 		this.seatNum = seatNum;
 	}
 
