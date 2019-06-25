@@ -47,4 +47,53 @@ public class Showcase {
 	public String getnewHour(){
 		 return (String) ShowHour.toString().subSequence(0,5);
 		}
+
+	public Integer getIdShowcase() {
+		return IdShowcase;
+	}
+
+	public void setIdShowcase(Integer idShowcase) {
+		IdShowcase = idShowcase;
+	}
+
+	public String getShowType() {
+		return ShowType;
+	}
+
+	public void setShowType(String showType) {
+		ShowType = showType;
+	}
+
+	public Date getShowDate() {
+		return ShowDate;
+	}
+
+	public void setShowDate(Date showDate) {
+		ShowDate = showDate;
+	}
+
+	public Time getShowHour() {
+		return ShowHour;
+	}
+
+	public void setShowHour(Time showHour) {
+		ShowHour = showHour;
+	}
+
+	public Movie getMovie() {
+		return Movie;
+	}
+
+	public void setMovie(Movie movie) {
+		Movie = movie;
+	}
+
+	public List<Sale> getSales() {
+		return Sales;
+	}
+
+	public void setSales(List<Sale> sales) {
+		Sales = sales;
+	}
+	
 }

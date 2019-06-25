@@ -13,6 +13,8 @@ public interface MovieService {
 	
 	public List<Movie> findALL() throws DataAccessException;
 	
+	public Movie findOne(int id) throws DataAccessException;
+	
 	public MovieDTO MapDTO(int id) throws DataAccessException;
 	
 	public void Update(MovieDTO M) throws DataAccessException;

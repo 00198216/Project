@@ -81,4 +81,10 @@ public class MovieServiceImpl implements MovieService{
 		entityManager.flush();
 	}
 
+	@Override
+	public com.uca.capas.domain.Movie findOne(int id) throws DataAccessException {
+	
+		return Movie.findOne(id);
+	}
+
 }

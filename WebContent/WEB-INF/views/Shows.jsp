@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
@@ -111,58 +111,79 @@ button:hover {
 
 </style>
 <meta charset="ISO-8859-1">
-<title>Administrador</title>
+<title>Movies</title>
 </head>
+
 <body style="background:linear-gradient(to right, darkblue ,cyan)">
 
 <center>
 
 <div class="jumbotron jumbotron-fluid" style="background:#FAFAFA90">
   <div class="container">
-    <h1 class="display-4">Administrador</h1>
+    <h1 class="display-4">Funciones</h1>
   </div>
 </div>
 <br>
-
-<table border="1">
-    
-       
-         <tr>
-           <th>Peliculas</th>
-    
-           
-           <th><form  name="form1" action="${pageContext.request.contextPath}/Movie" method="post">
-            <INPUT TYPE="Submit"  class="button2 buttonPer" VALUE="Datos">
-           </form></th>
-                      
-       </tr>
-       
-       <tr>
-           <th>Funciones</th>
-    
-           
-           <th><form  name="form2" action="${pageContext.request.contextPath}/Showcase" method="post">
-            <INPUT TYPE="Submit"  class="button2 buttonPer" VALUE="Datos">
-           </form></th>
-                      
-       </tr>
-       
-        <th>Usuarios</th>
-    
-           
-           <th><form  name="form2" action="${pageContext.request.contextPath}/Users" method="post">
-            <INPUT TYPE="Submit"  class="button2 buttonPer" VALUE="Datos">
-           </form></th>
-                      
-       </tr>
-       
-         
-
-  </table>
+   </center>
+   
+      <center>
  
+     <form  name="add" action="${pageContext.request.contextPath}/addM" method="post">
+            <INPUT TYPE="Submit" class="button buttonAdd" VALUE="Agregar Funcion">
+        </form>
+         <br>
+   </center>
+   
+<br>
+<br>
+<br>
+<table border="1" >
+   <tr>
+           <th>Codigo</th>
+           <th>Editar</th>
+           <th>Tipo</th>
+           <th>Fecha</th>
+           <th>Hora</th>
+           <th>Codigo Pelicula</th>
+           <th>pelicula</th>
+           
+           
+       </tr>
+       
+        <c:forEach items="${show}" var="show">
+         <tr>
+           <th>${show.idShowcase}</th>
+           
+             <th><form  name="edit" action="${pageContext.request.contextPath}/EditS" method="post">
+            <INPUT TYPE="Hidden" NAME="id" value=${show.idShowcase}>
+            <INPUT TYPE="Submit"   class="button2 buttonPer" VALUE="Editar Funcion">
+           </form></th>
+           
+           <th>${show.showType}</th>
+          <th>${show.showDate}</th>
+           <th>${show.newHour}</th>       
+            <th>${show.movie.idMovie}</th>
+             <th>${show.movie.name}</th>        
+          
+         
+           
+       </tr>
+       </c:forEach>
+       </table>
+       
+  <br>
   
+  <br>
 
-
+        <center>
+       <form  name="back" action="${pageContext.request.contextPath}/Ret2" method="post">
+            <INPUT TYPE="Submit" class="button buttonErase" VALUE="Return">
+        </form>
+   </center>
+       
+        
+       
+      
 
 </body>
 </html>
