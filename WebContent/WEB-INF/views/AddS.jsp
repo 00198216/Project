@@ -175,24 +175,24 @@ span.clave {
 </center>
 
 <div style="width:7%; margin-left: auto; margin-right: auto">
-<button onclick="document.getElementById('id01').style.display='block'" style="background:blue">Editar</button>
+<button onclick="document.getElementById('id01').style.display='block'" style="background:blue">Agregar</button>
 </div>
 <div id="id01" class="modal">
   
-  <form:form class="modal-content animate" action="${pageContext.request.contextPath}/SaveS" method="POST" modelAttribute="showDTO">
+  <form:form class="modal-content animate" action="${pageContext.request.contextPath}/perS" method="POST" modelAttribute="showDTO2">
 
 		<div class="container">
 	
 		
 		<label>Tipo de Funcion: </label><br>
-		<form:radiobutton name="showType" path="showType" value="3D XD VIP"/><label>3D XD VIP</label><br>
-		<form:radiobutton name="showType" path="showType" value="2D"/><label>2D</label><br>
-		<form:radiobutton name="showType" path="showType" value="3D"/><label>3D</label><br>
-		<form:radiobutton name="showType" path="showType" value="2D XD"/><label>2D XD</label><br>
-		<form:errors path="showType" cssStyle="color:#E81505;"></form:errors><br>
+		<form:radiobutton name="showType" path="ShowType" value="3D XD VIP"/><label>3D XD VIP</label><br>
+		<form:radiobutton name="showType" path="ShowType" value="2D"/><label>2D</label><br>
+		<form:radiobutton name="showType" path="ShowType" value="3D"/><label>3D</label><br>
+		<form:radiobutton name="showType" path="ShowType" value="2D XD"/><label>2D XD</label><br>
+		<form:errors path="ShowType" cssStyle="color:#E81505;"></form:errors><br>
 		
 		<label>Fecha de Funcion: </label>
-		<form:input type="Date" name="showDate" path="ShowDate" /><br>
+		<form:input type="Date" name="showDate" path="ShowDate" value="2019-06-28"/><br>
 		<form:errors path="ShowDate" cssStyle="color:#E81505;"></form:errors><br>
 		
 		<label>Hora de Funcion: </label>
@@ -206,7 +206,7 @@ span.clave {
 		
 		
 		<center>
-		<input type="submit" class="button3 buttonAdd" value="Editar Funcion">
+		<input type="submit" class="button3 buttonAdd" value="Agregar Funcion">
               </div>
               <div class="container" style="background-color:#f1f1f1;width:7%;  margin-left: auto; margin-right: auto">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>

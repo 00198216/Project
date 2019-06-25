@@ -186,11 +186,11 @@ span.clave {
 		<form:input TYPE="Hidden" name="id" path="idShowcase"/>
 		
 		<label>Tipo de Funcion: </label><br>
-		<form:radiobutton name="showType" path="showType" value="3D XD VIP"/><label>3D XD VIP</label><br>
-		<form:radiobutton name="showType" path="showType" value="2D"/><label>2D</label><br>
-		<form:radiobutton name="showType" path="showType" value="3D"/><label>3D</label><br>
-		<form:radiobutton name="showType" path="showType" value="2D XD"/><label>2D XD</label><br>
-		<form:errors path="showType" cssStyle="color:#E81505;"></form:errors><br>
+		<form:radiobutton name="showType" path="ShowType" value="3D XD VIP"/><label>3D XD VIP</label><br>
+		<form:radiobutton name="showType" path="ShowType" value="2D"/><label>2D</label><br>
+		<form:radiobutton name="showType" path="ShowType" value="3D"/><label>3D</label><br>
+		<form:radiobutton name="showType" path="ShowType" value="2D XD"/><label>2D XD</label><br>
+		<form:errors path="ShowType" cssStyle="color:#E81505;"></form:errors><br>
 		
 		<label>Fecha de Funcion: </label>
 		<form:input type="Date" name="showDate" path="ShowDate" /><br>

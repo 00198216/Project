@@ -128,7 +128,7 @@ button:hover {
    
       <center>
  
-     <form  name="add" action="${pageContext.request.contextPath}/addM" method="post">
+     <form  name="add" action="${pageContext.request.contextPath}/addS" method="post">
             <INPUT TYPE="Submit" class="button buttonAdd" VALUE="Agregar Funcion">
         </form>
          <br>

@@ -9,17 +9,18 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class ShowDTO {
 	
 	
     private Integer IdShowcase;
 	
-    @NotEmpty(message="El nombre es requerido")
+    @NotEmpty(message="El tipo de funcion es requerido")
     @Size(message="Ha pasado el maximo de 100 caracteres",max=100)
     private String ShowType;
 	
     @NotNull(message="La Fecha es requerida")
-    //@Date
     private Date ShowDate;
 	
     @NotEmpty(message="El nombre es requerido")
@@ -30,6 +31,7 @@ public class ShowDTO {
     @PositiveOrZero(message="Solo Numeros Positivos")
     @Digits(fraction = 0, integer = 2,message="formato de longitud erronea. Solo Dos digitos maximos admitidos")
 	private Integer IdMovie;
+    
 	
 	public Time getHourE(){
 		if(this.ShowHour == null) {
@@ -42,6 +44,10 @@ public class ShowDTO {
 			return HourS;
 			}	
 	}
+	
+	
+
+
 
 	public Integer getIdShowcase() {
 		return IdShowcase;

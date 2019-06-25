@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import com.uca.capas.domain.Showcase;
 import com.uca.capas.dto.ShowDTO;
 import com.uca.capas.services.MovieService;
@@ -60,5 +61,33 @@ public class ShowController {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value="/addS",method= RequestMethod.POST)
+	public ModelAndView Add(){
+		ModelAndView mav = new ModelAndView();	
+  	   mav.addObject("showDTO2",new ShowDTO());
+		 mav.setViewName("AddS");
+		return mav;
+	}
+	
+	@RequestMapping(value="/perS",method= RequestMethod.POST)
+	public ModelAndView Perist(@Valid @ModelAttribute("showDTO2") ShowDTO showDTO2 ,BindingResult result){
+		ModelAndView mav = new ModelAndView();	
+		
+		if(result.hasErrors() || Service1.findOne(showDTO2.getIdMovie())==null) {
+	    	mav.setViewName("AddS");
+	    	
+	       }	
+		
+		else {
+			ModelAndView mav2 = new ModelAndView("redirect:/Showcase");	
+			Service2.AddS(showDTO2);
+			return mav2;
+		}
+		return mav;
+		
+	}
+	
+
 
 }

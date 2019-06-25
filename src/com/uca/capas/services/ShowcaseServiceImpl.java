@@ -53,7 +53,7 @@ public class ShowcaseServiceImpl implements ShowcaseService {
 		show.setShowHour(M.getHourE());
 		show.setMovie(Movie.findOne(M.getIdMovie()));
 		
-		entityManager.persist(show);
+		entityManager.merge(show);
 		entityManager.flush();
 		
 	}
@@ -61,8 +61,14 @@ public class ShowcaseServiceImpl implements ShowcaseService {
 	@Override
 	@Transactional
 	public void AddS(ShowDTO M) throws DataAccessException {
-		// TODO Auto-generated method stub
+		Showcase show = new Showcase();
+		show.setShowType(M.getShowType());
+		show.setShowDate(M.getShowDate());
+		show.setShowHour(M.getHourE());
+		show.setMovie(Movie.findOne(M.getIdMovie()));
 		
+		entityManager.persist(show);
+		entityManager.flush();
 	}
 
 }
