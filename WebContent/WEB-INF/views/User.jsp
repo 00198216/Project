@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
@@ -111,64 +111,72 @@ button:hover {
 
 </style>
 <meta charset="ISO-8859-1">
-<title>Administrador</title>
+<title>Movies</title>
 </head>
+
 <body style="background:linear-gradient(to right, darkblue ,cyan)">
 
 <center>
 
 <div class="jumbotron jumbotron-fluid" style="background:#FAFAFA90">
   <div class="container">
-    <h1 class="display-4">Administrador</h1>
+    <h1 class="display-4">Users</h1>
   </div>
 </div>
 <br>
-
-<table border="1">
-    
+   </center>
+   
+ 
+   
+<br>
+<br>
+<br>
+<table border="1" >
+   <tr>
+           <th>Codigo</th>
+           <th>Username</th>
+           <th>Nombre</th>
+           <th>balance</th>
+           <th>Pais</th>
+           <th>Cumpleaños</th>
+           <th>Estado</th>
+           <th>Editar Estado</th>
+           
+           
+       </tr>
        
+        <c:forEach items="${user}" var="user">
          <tr>
-           <th>Peliculas</th>
-    
+           <th>${user.idUser}</th>
+           <th>${user.username}</th>
+            <th>${user.fullName}</th>
+            <th>${user.balance}</th>
+             <th>${user.country.idCountry}</th>
+              <th>${user.cumple}</th>
+               <th>${user.stateU}</th>
            
-           <th><form  name="form1" action="${pageContext.request.contextPath}/Movie" method="post">
-            <INPUT TYPE="Submit"  class="button2 buttonPer" VALUE="Datos">
+           <th><form  name="State" action="${pageContext.request.contextPath}/StateUser" method="post">
+            <INPUT TYPE="Hidden" NAME="id" value=${user.idUser}>
+            <INPUT TYPE="Submit" class="button2 buttonEdit" VALUE="Editar Estado">
            </form></th>
-                      
-       </tr>
-       
-       <tr>
-           <th>Funciones</th>
-    
-           
-           <th><form  name="form2" action="${pageContext.request.contextPath}/Showcase" method="post">
-            <INPUT TYPE="Submit"  class="button2 buttonPer" VALUE="Datos">
-           </form></th>
-                      
-       </tr>
-       
-        <th>Usuarios</th>
-    
-           
-           <th><form  name="form2" action="${pageContext.request.contextPath}/User" method="post">
-            <INPUT TYPE="Submit"  class="button2 buttonPer" VALUE="Datos">
-           </form></th>
-                      
-       </tr>
-       
          
+           
+       </tr>
+       </c:forEach>
+       </table>
+       
+  <br>
+  
+  <br>
 
-  </table>
- 
- 
-   <center>
-       <form  name="back" action="${pageContext.request.contextPath}/Ret4" method="post">
-            <INPUT TYPE="Submit" class="button buttonErase" VALUE="Log Out">
+        <center>
+       <form  name="back" action="${pageContext.request.contextPath}/Ret3" method="post">
+            <INPUT TYPE="Submit" class="button buttonErase" VALUE="Return">
         </form>
    </center>
-  
-
-
+       
+        
+       
+      
 
 </body>
-</html>

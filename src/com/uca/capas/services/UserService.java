@@ -12,5 +12,7 @@ public interface UserService {
 
   public List<User> findALL() throws DataAccessException;
 
-  public User findUserandPass(String usuario, String clave) throws DataAccessException;;
+  public User findUserandPass(String usuario, String clave) throws DataAccessException;
+  
+  public void UpdateU(int id) throws DataAccessException;
 }

@@ -9,8 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.uca.capas.domain.Movie;
 import com.uca.capas.domain.Showcase;
+import com.uca.capas.domain.User;
+import com.uca.capas.dto.loginDTO;
 import com.uca.capas.services.MovieService;
 import com.uca.capas.services.ShowcaseService;
+import com.uca.capas.services.UserService;
 
 @Controller
 public class AdminController {
@@ -20,6 +23,10 @@ public class AdminController {
 	
 	@Autowired
 	ShowcaseService Service2;
+	
+	@Autowired
+	UserService Service3;
+	
 	
 	@RequestMapping(value= "/Movie")
 	public ModelAndView Movies() {
@@ -36,6 +43,23 @@ public class AdminController {
 		List<Showcase> show=Service2.findALL();
 		mav.addObject("show",show);
 		mav.setViewName("Shows");
+		return mav;
+	}
+	
+	@RequestMapping(value= "/User")
+	public ModelAndView User() {
+		ModelAndView mav = new ModelAndView();
+		List<User> user= Service3.findALL(); 
+		mav.addObject("user",user);
+		mav.setViewName("User");
+		return mav;
+	}
+	
+	@RequestMapping(value= "/Ret4")
+	public ModelAndView End() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("loginDTO", new loginDTO());
+		mav.setViewName("Login");
 		return mav;
 	}
 

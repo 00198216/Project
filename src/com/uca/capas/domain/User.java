@@ -34,7 +34,7 @@ public class User {
     private String password;
 	
 	@Column(name="birthDate")
-    private Date BDate;
+    private Date cumple;
 	
 	@Column(name="balance")
     private BigDecimal Balance;
@@ -65,8 +65,14 @@ public class User {
 	@OneToMany(mappedBy="User",fetch= FetchType.LAZY,orphanRemoval=true,cascade=CascadeType.PERSIST)
 	private List<Sale> Sales;
 	
+   
 	
 	//Delegate methods
+	
+	public String Municipio() {
+		if(Municipality==null) return "N/A";
+		else return Municipality;
+	}
 
 	public String getStateU() {
 		if(this.state) {
@@ -109,12 +115,13 @@ public class User {
 		this.password = password;
 	}
 
-	public Date getBDate() {
-		return BDate;
+
+	public Date getCumple() {
+		return cumple;
 	}
 
-	public void setBDate(Date bDate) {
-		BDate = bDate;
+	public void setCumple(Date cumple) {
+		this.cumple = cumple;
 	}
 
 	public BigDecimal getBalance() {
