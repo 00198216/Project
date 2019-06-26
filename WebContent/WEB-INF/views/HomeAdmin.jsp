@@ -163,6 +163,7 @@ button:hover {
  
    <center>
        <form  name="back" action="${pageContext.request.contextPath}/Ret4" method="post">
+             <INPUT TYPE="Hidden" NAME="id" value=${user.idUser}>
             <INPUT TYPE="Submit" class="button buttonErase" VALUE="Log Out">
         </form>
    </center>

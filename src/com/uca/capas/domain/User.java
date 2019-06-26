@@ -45,8 +45,14 @@ public class User {
 	@Column(name="L_name")
     private String Lname;
 	
+	@Column(name="comment")
+    private String Comment;
+	
 	@Column(name="active")
     private boolean state;
+	
+	@Column(name="activeSession")
+    private boolean seccion;
 	
 	@Column(name="municipality")
     private String Municipality;
@@ -195,5 +201,23 @@ public class User {
 	public void setSales(List<Sale> sales) {
 		Sales = sales;
 	}
+
+	public String getComment() {
+		return Comment;
+	}
+
+	public void setComment(String comment) {
+		Comment = comment;
+	}
+
+	public boolean getSeccion() {
+		return seccion;
+	}
+
+	public void setSeccion(boolean seccion) {
+		this.seccion = seccion;
+	}
+	
+	
 
 }

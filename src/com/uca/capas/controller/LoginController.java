@@ -34,15 +34,18 @@ public class LoginController {
 	@RequestMapping(value= "/Login" ,method= RequestMethod.POST)
 	public ModelAndView Login(@Valid @ModelAttribute("loginDTO") loginDTO loginDTO ,BindingResult result) {
 		ModelAndView mav = new ModelAndView();
-       if(result.hasErrors() || Service.findUserandPass(loginDTO.getUser(), loginDTO.getClave())==null || Service.findUserandPass(loginDTO.getUser(), loginDTO.getClave()).getStateU().equals("Inactivo")) {
+       if(result.hasErrors() || Service.findUserandPass(loginDTO.getUser(), loginDTO.getClave())==null || Service.findUserandPass(loginDTO.getUser(), loginDTO.getClave()).getStateU().equals("Inactivo") || Service.findUserandPass(loginDTO.getUser(), loginDTO.getClave()).getSeccion()){
     	   mav.setViewName("Login");
        }	
        else {
     	     User user = Service.findUserandPass(loginDTO.getUser(), loginDTO.getClave());
+    	     Service.UpdateS(user.getIdUser());
     	     if(user.getAccount().equals("admin")) {
+    	    	   mav.addObject("user",user);
     	    	   mav.setViewName("HomeAdmin");
     	     }
     	     else {
+    	    	 mav.addObject("user",user);
     	    	 mav.setViewName("HomeCliente");
     	     }	   
     	   

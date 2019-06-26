@@ -137,10 +137,10 @@ button:hover {
            <th>Username</th>
            <th>Nombre</th>
            <th>balance</th>
-           <th>Pais</th>
            <th>Cumpleaños</th>
            <th>Estado</th>
            <th>Editar Estado</th>
+           <th>Comentario</th>
            
            
        </tr>
@@ -151,7 +151,6 @@ button:hover {
            <th>${user.username}</th>
             <th>${user.fullName}</th>
             <th>${user.balance}</th>
-             <th>${user.country.idCountry}</th>
               <th>${user.cumple}</th>
                <th>${user.stateU}</th>
            
@@ -160,6 +159,7 @@ button:hover {
             <INPUT TYPE="Submit" class="button2 buttonEdit" VALUE="Editar Estado">
            </form></th>
          
+            <th>${user.comment}</th>
            
        </tr>
        </c:forEach>
