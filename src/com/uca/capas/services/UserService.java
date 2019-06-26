@@ -23,5 +23,7 @@ public interface UserService {
   
   public User findOne(int id) throws DataAccessException;
   
+  public User findOneAdmin() throws DataAccessException;
+  
   public UserDTO mapDTO	(int id);
 }

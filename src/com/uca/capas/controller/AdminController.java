@@ -28,9 +28,12 @@ public class AdminController {
 	@Autowired
 	UserService Service3;
 	
+	static final int id2=0;
+	
 	
 	@RequestMapping(value= "/Movie")
-	public ModelAndView Movies() {
+	public ModelAndView Movies(@RequestParam(value="id") int id) {
+		
 		ModelAndView mav = new ModelAndView();
 		List<Movie> movies=Service1.findALL();
 		mav.addObject("movies",movies);
@@ -39,7 +42,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value= "/Showcase")
-	public ModelAndView Shows() {
+	public ModelAndView Shows(@RequestParam(value="id") int id) {
+		
 		ModelAndView mav = new ModelAndView();
 		List<Showcase> show=Service2.findALL();
 		mav.addObject("show",show);
@@ -48,7 +52,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value= "/User")
-	public ModelAndView User() {
+	public ModelAndView User(@RequestParam(value="id") int id) {
+		
 		ModelAndView mav = new ModelAndView();
 		List<User> user= Service3.findALL(); 
 		mav.addObject("user",user);
@@ -58,11 +63,25 @@ public class AdminController {
 	
 	@RequestMapping(value= "/Ret4")
 	public ModelAndView End(@RequestParam(value="id") int id) {
-		ModelAndView mav = new ModelAndView();
-		Service3.UpdateS(id);
-		mav.addObject("loginDTO", new loginDTO());
-		mav.setViewName("Login");
-		return mav;
+		if(id==0) {
+			User user= Service3.findOneAdmin();
+			ModelAndView mav = new ModelAndView();
+			Service3.UpdateS(user.getIdUser());
+			id=-1;
+			mav.addObject("loginDTO", new loginDTO());
+			mav.setViewName("Login");
+			return mav;
+			
+		}
+		else {
+			ModelAndView mav = new ModelAndView();
+			Service3.UpdateS(id);
+			mav.addObject("loginDTO", new loginDTO());
+			mav.setViewName("Login");
+			return mav;
+		}
+		
+		
 	}
 
 }

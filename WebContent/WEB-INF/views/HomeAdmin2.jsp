@@ -132,7 +132,7 @@ button:hover {
     
            
            <th><form  name="form1" action="${pageContext.request.contextPath}/Movie" method="post">
-            <INPUT TYPE="Hidden" NAME="id" value=0>
+            <INPUT TYPE="Hidden" NAME="id" value=${user.idUser}>
             <INPUT TYPE="Submit"  class="button2 buttonPer" VALUE="Datos">
            </form></th>
                       
@@ -143,7 +143,7 @@ button:hover {
     
            
            <th><form  name="form2" action="${pageContext.request.contextPath}/Showcase" method="post">
-            <INPUT TYPE="Hidden" NAME="id" value=0>
+            <INPUT TYPE="Hidden" NAME="id" value=${user.idUser}>
             <INPUT TYPE="Submit"  class="button2 buttonPer" VALUE="Datos">
            </form></th>
                       
@@ -153,7 +153,7 @@ button:hover {
     
            
            <th><form  name="form2" action="${pageContext.request.contextPath}/User" method="post">
-            <INPUT TYPE="Hidden" NAME="id" value=0>
+            <INPUT TYPE="Hidden" NAME="id" value=${user.idUser}>
             <INPUT TYPE="Submit"  class="button2 buttonPer" VALUE="Datos">
            </form></th>
                       
@@ -166,7 +166,7 @@ button:hover {
  
    <center>
        <form  name="back" action="${pageContext.request.contextPath}/Ret4" method="post">
-             <INPUT TYPE="Hidden" NAME="id" value=0>
+             <INPUT TYPE="Hidden" NAME="id" value=${user.idUser}>
             <INPUT TYPE="Submit" class="button buttonErase" VALUE="Log Out">
         </form>
    </center>
@@ -175,4 +175,4 @@ button:hover {
 
 
 </body>
-</html></html>
+</html>

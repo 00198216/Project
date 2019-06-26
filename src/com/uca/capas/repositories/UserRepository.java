@@ -24,5 +24,10 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 			+"from USR "
 			+ "where accountType = 'cliente'")
     public List<User> findCliente();
+	
+	@Query(nativeQuery= true,value="select * "
+			+"from USR "
+			+ "where accountType = 'admin'")
+    public User findAdmin();
 
 }

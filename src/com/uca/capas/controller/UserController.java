@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.uca.capas.domain.Movie;
 import com.uca.capas.domain.User;
-import com.uca.capas.dto.MovieDTO;
+
 import com.uca.capas.dto.UserDTO;
 import com.uca.capas.services.UserService;
 
@@ -25,7 +24,6 @@ public class UserController {
 	
 	@Autowired
 	UserService Service3;
-	
 	
 
 	@RequestMapping(value="/StateUser",method= RequestMethod.POST)

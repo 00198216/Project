@@ -42,7 +42,7 @@ public class LoginController {
     	     Service.UpdateS(user.getIdUser());
     	     if(user.getAccount().equals("admin")) {
     	    	   mav.addObject("user",user);
-    	    	   mav.setViewName("HomeAdmin");
+    	    	   mav.setViewName("HomeAdmin2");
     	     }
     	     else {
     	    	 mav.addObject("user",user);

@@ -92,8 +92,9 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
-
-
-	
+	@Override
+	public User findOneAdmin() throws DataAccessException {
+		return Users.findAdmin();
+	}
 
 }
