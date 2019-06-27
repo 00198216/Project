@@ -38,10 +38,7 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public void UpdateU(int id) throws DataAccessException {
 		User user = Users.findOne(id);
-		if(user.getStateU().equals("Activo")) {
-			user.setState(false);
-		}
-		else {
+		if(user.getStateU().equals("Inactivo")) {
 			user.setState(true);
 		}
 		user.setComment(" ");

@@ -27,7 +27,8 @@ public class UserController {
 	
 
 	@RequestMapping(value="/StateUser",method= RequestMethod.POST)
-	public ModelAndView SaveS(@RequestParam(value="id") int id){
+	public ModelAndView SaveS(@RequestParam(value="id") Integer id){
+		System.out.println(id);
 		User Usr=Service3.findOne(id);
 		
 		if(Usr.getStateU().equals("Activo")) {
@@ -35,13 +36,14 @@ public class UserController {
 			mav.addObject("UserDTO",Service3.mapDTO(id));
 			mav.setViewName("UserState");
 		
-	             	return mav;
+	         return mav;
 			
 		}
 		else {
+			Service3.UpdateU(id);
 			ModelAndView mav = new ModelAndView("redirect:/User");	
 			
-			Service3.UpdateU(id);
+			
 		
 		return mav;
 			

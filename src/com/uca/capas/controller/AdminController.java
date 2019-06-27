@@ -32,7 +32,7 @@ public class AdminController {
 	
 	
 	@RequestMapping(value= "/Movie")
-	public ModelAndView Movies(@RequestParam(value="id") int id) {
+	public ModelAndView Movies() {
 		
 		ModelAndView mav = new ModelAndView();
 		List<Movie> movies=Service1.findALL();
@@ -42,7 +42,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value= "/Showcase")
-	public ModelAndView Shows(@RequestParam(value="id") int id) {
+	public ModelAndView Shows() {
 		
 		ModelAndView mav = new ModelAndView();
 		List<Showcase> show=Service2.findALL();
@@ -52,7 +52,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value= "/User")
-	public ModelAndView User(@RequestParam(value="id") int id) {
+	public ModelAndView User() {
 		
 		ModelAndView mav = new ModelAndView();
 		List<User> user= Service3.findALL(); 
